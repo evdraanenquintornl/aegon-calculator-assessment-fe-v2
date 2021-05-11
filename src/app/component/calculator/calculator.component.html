@@ -1,0 +1,29 @@
+<b>
+  <h2>Aegon Simple Calculator</h2>
+</b>
+<form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>prefix (e.g. 10)</mat-label>
+      <input matInput type="number" formControlName="prefix" class="form-control" class="example-right-align">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>operator (e.g. +)</mat-label>
+      <mat-select matSelectdisableRipple formControlName="operator" class="form-control" class="example-right-align">
+        <mat-option value="/">/</mat-option>
+        <mat-option value="X">X</mat-option>
+        <mat-option value="-">-</mat-option>
+        <mat-option value="+">+</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>suffix (e.g. 10)</mat-label>
+      <input matInput type="number" formControlName="suffix" class="form-control" class="example-right-align">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Calculate</button>
+    <button mat-raised-button type="reset" (click)="onReset()">Reset</button>
+  </div>
+</form>
